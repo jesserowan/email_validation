@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Thank you</title>
+</head>
+<body>
+    <h1>Thanks for submitting a valid email address to our database.</h1>
+    <a class="btn btn-dark" href="/">Add another email</a>
+    <br><br>
+    <table class="table table-dark table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Email address</th>
+                <th>Date and Time Added</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for email in emails: %}
+            <tr>
+                <td>{{ email['id'] }}</td>
+                <td>{{ email['email'] }}</td>
+                <td>{{ email['created_at'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <p></p>
+</body>
+</html>
